@@ -100,11 +100,11 @@ RUN --mount=type=bind,from=ghcr.io/blue-build/cli/build-scripts:v0.9.11,src=/scr
   /scripts/post_build.sh
 
 # Labels are added last since they cause cache misses with buildah
-LABEL org.blue-build.build-id="dbaa6d73-4ef9-4fe9-b7c7-8a179143ab74"
+LABEL org.blue-build.build-id="6331f6e2-9f41-4019-a67f-350e04bcb984"
 LABEL org.opencontainers.image.title="joeri-os"
-LABEL org.opencontainers.image.description="Universal Blue with Brave Browser, 1Pasword, MullvadVPN, Tabby and additional Flatpaks."
+LABEL org.opencontainers.image.description="Personalized Universal Blue Onyx (Budgie) Image"
 LABEL org.opencontainers.image.source=""
 LABEL org.opencontainers.image.base.digest="sha256:4ddc5857b981a9aba486135685d39ce618db29847eefa9c5e84b775a0d5981dd"
 LABEL org.opencontainers.image.base.name="ghcr.io/ublue-os/onyx-main:latest"
-LABEL org.opencontainers.image.created="2025-04-29T20:13:43.715866786+00:00"
+LABEL org.opencontainers.image.created="2025-04-29T21:52:40.256867309+00:00"
 LABEL io.artifacthub.package.readme-url=https://raw.githubusercontent.com/blue-build/cli/main/README.md
