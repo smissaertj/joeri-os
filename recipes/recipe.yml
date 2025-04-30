@@ -71,6 +71,15 @@ modules:
         - mullvad-daemon
         - tailscaled
 
+  - type: gnome-extensions
+    install:
+      - 6139 # Tailscale QS
+      # - 5489 # Search Light
+      - 3193 # Blur my Shell
+      - 2890 # Tray Icons Reloaded
+      # - 615 # AppIndicator and KStatusNotifierItem Support
+      - 307 # Dash to Dock
+
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
     system:
