@@ -49,6 +49,12 @@ modules:
         - tailscale
         - unrar
         - https://github.com/Eugeny/tabby/releases/download/v1.0.223/tabby-1.0.223-linux-x64.rpm
+        # Gnome Extensions
+        - gnome-shell-extension-appindicator
+        - gnome-shell-extension-blur-my-shell
+        - gnome-shell-extension-dash-to-dock
+        - gnome-shell-extension-freon
+        - gnome-shell-extension-user-theme
     optfix:
       - 1Password
       - brave.com
@@ -60,6 +66,8 @@ modules:
         # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+        - gnome-shell-extension-background-logo
+        - gnome-shell-extension-apps-menu
 
   - type: brew
     auto-update: true
@@ -70,6 +78,23 @@ modules:
       enabled:
         - mullvad-daemon
         - tailscaled
+
+  - type: gnome-extensions
+    install:
+      - 6139 # Tailscale QS
+      # - 5489 # Search Light
+      # - 3193 # Blur my Shell
+      # - 2890 # Tray Icons Reloaded
+      # - 615 # AppIndicator and KStatusNotifierItem Support
+      # - 307 # Dash to Dock
+    # uninstall:
+    #   - GSConnect # Uninstall step here should be used only for the extensions
+    #     # which are not installed through OS package manager in the base image,
+    #     # like extensions installed from gnome-extensions module
+
+  - type: gschema-overrides
+    include:
+      - zz0-bluefin-modifications.gschema.override
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
