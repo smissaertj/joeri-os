@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Versioned script to install Homebrew packages on first login
+# Versioned script to install Homebrew packages on interactive login shell
 # This will run again when the version is updated
 
-# Only run for interactive login shells
+# Only run for interactive **login** shells
 [[ $- != *i* ]] && return
 [[ -n "$BASH_VERSION" && "$0" != "-bash" ]] && return
 
