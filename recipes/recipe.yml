@@ -93,7 +93,7 @@ modules:
       - zz0-bluefin-modifications.gschema.override
 
   - type: default-flatpaks
-    notify: true # Send notification after install/uninstall is finished (true/false)
+    notify: false # Send notification after install/uninstall is finished (true/false)
     system:
       # If no repo information is specified, Flathub will be used by default
       install:
