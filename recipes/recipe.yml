@@ -90,7 +90,7 @@ modules:
 
   - type: gschema-overrides
     include:
-      - zz0-bluefin-modifications.gschema.override
+      - zz0-ublue-modifications.gschema.override
 
   - type: default-flatpaks
     notify: false # Send notification after install/uninstall is finished (true/false)
