@@ -3,11 +3,11 @@
 # image will be published to ghcr.io/<user>/<name>
 name: joeri-os
 # description will be included in the image's metadata
-description: Personalized Universal Blue Onyx (Budgie) Image
+description: Personalized Universal Blue (Silverblue) Image
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/onyx-main
-image-version: latest # latest is also supported if you want new updates ASAP
+base-image: ghcr.io/ublue-os/silverblue-main
+image-version: 42 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -23,9 +23,13 @@ modules:
         - mullvad.repo
         - 1password.repo
         - brave-browser.repo
+        - code.repo
+        - tailscale-stable.repo
       keys:
         - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
         - https://downloads.1password.com/linux/keys/1password.asc
+        - https://packages.microsoft.com/keys/microsoft.asc
+        - https://pkgs.tailscale.com/stable/fedora/repo.gpg
       copr:
         - atim/starship
       nonfree: rpmfusion
@@ -37,10 +41,12 @@ modules:
         - mullvad-vpn
         - 1password
         - 1password-cli
+        - code
         - gcc
         - p7zip
         - p7zip-plugins
         - starship
+        - tailscale
         - unrar
         - https://github.com/Eugeny/tabby/releases/download/v1.0.223/tabby-1.0.223-linux-x64.rpm
     optfix:
@@ -55,10 +61,15 @@ modules:
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
+  - type: brew
+    auto-update: true
+    auto-upgrade: false
+
   - type: systemd
     system:
       enabled:
         - mullvad-daemon
+        - tailscaled
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
@@ -78,7 +89,6 @@ modules:
         - net.waterfox.waterfox
         - org.fedoraproject.MediaWriter
         - org.flameshot.Flameshot
-        - org.mozilla.firefox
         - org.telegram.desktop
         - org.telegram.desktop.webview
         - org.videolan.VLC
@@ -112,12 +122,11 @@ modules:
         - org.gnome.Weather
         - io.missioncenter.MissionCenter
         - io.github.pwr_solaar.solaar
-        - org.mozilla.firefox
-        - org.mozilla.Thunderbird
         - org.gustavoperedo.FontDownloader
         - page.tesk.Refine
       remove:
         - org.gnome.eog
+        - org.mozilla.firefox
     user: {} # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
