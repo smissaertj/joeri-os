@@ -26,7 +26,7 @@ fi
 V1_0_PACKAGES=(
     go
     nvm
-    rust
+    minikube
 )
 
 # Handle version-specific upgrades
@@ -42,6 +42,7 @@ case "$INSTALLED_VERSION" in
 
             # Install latest LTS version of Node
             echo "Installing latest LTS version of Node.js..."
+            source $HOME/.bashrc
             nvm install --lts
             nvm use --lts
         fi
