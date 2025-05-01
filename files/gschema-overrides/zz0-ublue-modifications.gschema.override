@@ -37,6 +37,11 @@ picture-uri='file:///usr/share/backgrounds/f42/default/f42/f42-01-night.jxl'
 [org.gnome.nautilus.preferences]
 default-folder-viewer='list-view'
 show-hidden-files=true
+
+[org.gtk.settings.FileChooser]
+sort-directories-first=true
+
+[org.gtk.gtk4.settings.FileChooser]
 sort-directories-first=true
 
 [org.gnome.system.locale]
