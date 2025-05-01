@@ -26,7 +26,6 @@ fi
 V1_0_PACKAGES=(
     go
     nvm
-    rust
 )
 
 # Handle version-specific upgrades
