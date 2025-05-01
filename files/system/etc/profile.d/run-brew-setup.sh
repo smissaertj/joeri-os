@@ -41,10 +41,8 @@ case "$INSTALLED_VERSION" in
             . "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"
 
             # Install latest LTS version of Node
-            echo "Installing latest LTS version of Node.js..."
             source $HOME/.bashrc
             nvm install --lts
-            nvm use --lts
         fi
         ;;
     # Add more cases for future versions
