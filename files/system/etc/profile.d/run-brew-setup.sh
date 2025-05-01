@@ -26,6 +26,7 @@ fi
 V1_0_PACKAGES=(
     go
     nvm
+    minikube
 )
 
 # Handle version-specific upgrades
