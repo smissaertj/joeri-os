@@ -21,6 +21,7 @@ modules:
 
   - type: dnf
     repos:
+      cleanup: true
       files:
         - mullvad.repo
         - 1password.repo
